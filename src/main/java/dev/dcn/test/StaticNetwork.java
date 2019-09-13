@@ -13,9 +13,9 @@ import java.util.Stack;
 
 public class StaticNetwork {
     public static final BigInteger GAS_LIMIT = BigInteger.valueOf(8000000);
-    private static final EtherDebugNet network;
+    private static EtherDebugNet network = null;
 
-    static {
+    public static void Start() {
         try {
             HashMap<String, String> accounts = new HashMap<>();
             for (Credentials key : Accounts.keys) {
